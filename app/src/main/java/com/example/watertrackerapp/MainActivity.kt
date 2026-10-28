@@ -27,10 +27,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 
+
 class MainActivity : ComponentActivity() {
     private val TAG = "WaterTrackerLifecycle"
     private lateinit var prefs: SharedPreferences
-    private var glasses = 0
+    private var glasses by mutableStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,6 +96,7 @@ class MainActivity : ComponentActivity() {
     }
     }
 // }
+
 
 @Composable
 fun WaterTrackerScreen(
